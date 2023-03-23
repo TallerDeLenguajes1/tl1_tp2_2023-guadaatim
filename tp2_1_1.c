@@ -10,6 +10,7 @@ int main(){
 
     for (i = 0; i < N; i++)
     {   
+        srand(time(NULL));
         vt[i] = 1 + rand() % 100;
         printf("\n %.2f ", vt[i]);
     }
