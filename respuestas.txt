@@ -1,0 +1,5 @@
+PUNTO 2 -f
+- No se puede ver el archivo ya que se encuentra en la otra rama, que no está activa en ese momento
+- Se puede ver que el main se ubicó arriba de la otra rama
+- Luego de utilizar git merge, se puede ver como los puntitos del main y la otra rama se unen
+
