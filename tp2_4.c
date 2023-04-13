@@ -11,7 +11,7 @@ struct compu
     char *tipo_cpu;
 }typedef compu;
 
-void mostrar(compu pcs[]);
+void mostrar(compu pcs[], int tam);
 void compuvieja(compu pcs[]);
 void compurapida(compu pcs[]);
 
@@ -31,23 +31,23 @@ int main(){
         pc[i].tipo_cpu = &tipos[rand() % 7][0];
     }
     
-    
-    mostrar(pc);
+    printf("\n-------PC-------");
+    mostrar(pc, TAMA);
     compuvieja(pc);
     compurapida(pc);
 
     return 0;
 }
 
-void mostrar(compu pcs[])
+void mostrar(compu pcs[], int tam)
 {
-    for (int i = 0; i < TAMA; i++)
+    for (int i = 0; i < tam; i++)
     {   
-        printf("\n-------PC-------");
         printf("\ncantidad: %d", pcs[i].cantidad);
         printf("\nanio: %d", pcs[i].anio);
         printf("\nvelocidad: %d GHz", pcs[i].velocidad);
         printf("\ntipo de cpu: %s", pcs[i].tipo_cpu);
+        printf("\n--------------");
     }
     
 }
@@ -74,14 +74,8 @@ void compuvieja(compu pcs[])
         
     }
 
-    for (int i = 0; i < 1; i++)
-    {
-        printf("\n-------PC MAS VIEJA-------");
-        printf("\ncantidad: %d", pcvieja[i].cantidad);
-        printf("\nanio: %d", pcvieja[i].anio);
-        printf("\nvelocidad: %d GHz", pcvieja[i].velocidad);
-        printf("\ntipo de cpu: %s", pcvieja[i].tipo_cpu);
-    }
+    printf("\n-------PC MAS VIEJA-------");
+    mostrar(pcvieja, 1);
     
 }
 
@@ -107,15 +101,9 @@ void compurapida(compu pcs[])
         }
         
     }
-    
-    for (int i = 0; i < 1; i++)
-    {
-        printf("\n-------PC MAS RAPIDA-------");
-        printf("\ncantidad: %d", pcrapida[i].cantidad);
-        printf("\nanio: %d", pcrapida[i].anio);
-        printf("\nvelocidad: %d GHz", pcrapida[i].velocidad);
-        printf("\ntipo de cpu: %s", pcrapida[i].tipo_cpu);
-    }
+
+    printf("\n-------PC MAS RAPIDA-------");
+    mostrar(pcrapida, 1);
     
 
 }
